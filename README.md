@@ -427,6 +427,9 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 ```
 Save the `.zshrc` file with `Ctrl` + `S` and close Visual Code Studio.
 
+## Sqlite
+
+https://www.sqlitetutorial.net/download-install-sqlite/
 
 ## Postgresql
 
