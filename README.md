@@ -64,7 +64,7 @@ For many computers, this is already the case. Let's check:
 
 ![task_manager.jpg](images/task_manager.jpg)
 
-If **Virtualization** is already enabled, go directly to [Github account](https://github.com/lewagon/setup/blob/master/WINDOWS.md#github-account).
+If **Virtualization** is already enabled, go directly to [Github account](https://github.com/Joz84/setup/blob/master/WINDOWS.md#github-account).
 
 If not, we need to enable it, which is a process that is different for each model of computer, so we can only offer vague guidelines in this guide. Please ask a teacher as soon as you get stuck!
 
@@ -361,9 +361,9 @@ sudo apt install -y nodejs
 
 ## Dotfiles (Standard configuration)
 
-Hackers love to refine and polish their shell and tools. We'll start with a great default configuration provided by [Le Wagon](http://github.com/lewagon/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
+Hackers love to refine and polish their shell and tools. We'll start with a great default configuration (http://github.com/Joz84/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
 
-:arrow_right: [Click here to **fork**](https://github.com/lewagon/dotfiles/fork) the `dotfiles` repository to your account.
+:arrow_right: [Click here to **fork**](https://github.com/Joz84/dotfiles/fork) the `dotfiles` repository to your account.
 
 You should arrive on a page that looks like this. Make sure to **select your GitHub account**.
 
