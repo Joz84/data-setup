@@ -359,7 +359,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
-Check that everything went well by launching the Jupyter program
+Check that everything went well by launching the Node program
 
 ```bash
 node
@@ -452,7 +452,7 @@ Open a terminal and run the following:
 sudo apt-get install sqlite libsqlite3-dev
 ```
 
-Check that everything went well by launching the Jupyter program
+Check that everything went well by launching the Sqlite program
 
 ```bash
 sqlite3 db.sqlite
@@ -562,6 +562,8 @@ Do you wish the installer to prepend the Anaconda3 install location
 to PATH in your /home/ec2-user/.bashrc ? [yes|no]
 ```
 
+When the installation is finished, run the following:
+
 ```bash
 cd anaconda3/bin/
 echo export PATH='"'`pwd`':$PATH"' >> ~/.zshrc
@@ -574,9 +576,69 @@ Previous commands added to the file. zshrc the path (folder) where Anaconda is l
 source ~/.zshrc
 ```
 
+Once you've done that, let's check if python 3 worked:
+
+```bash
+python
+```
+
+If you enter a new prompt like this one with python version > 3, you're good!
+
+```bash
+Python 3.7.6 (default, Jan  8 2020, 13:42:34)
+[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+Press **`Ctrl` + `D`** to quite.
+
+
 Check that everything went well by launching the Jupyter program
 
 ```bash
 jupyter notebook
 ```
+
+## SQLAlchemy
+
+SQLAlchemy is the Python SQL toolkit and Object Relational Mapper that gives application developers the full power and flexibility of SQL.
+
+It provides a full suite of well known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+
+
+```bash
+pip install SQLAlchemy
+```
+
+Check that everything went well by launching the program
+
+```bash
+python
+```
+
+```bash
+>>> import sqlalchemy
+>>> sqlalchemy.__version__
+```
+
+## Django
+
+Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
+
+### Installation
+
+```bash
+python -m pip install Django
+```
+
+Check that everything went well by launching the program
+
+```bash
+python -m django --version
+```
+
+
+
+
 
