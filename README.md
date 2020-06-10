@@ -2,12 +2,15 @@
 
 Welcome to this setup where we are going to install the tools required to make your machine a true developer environment :muscle:.
 
+- Install remote tools
 - Install a code editor, where you will spend your days and nights
 - Install a package manager
 - Pimp your Terminal
 - Setup git and GitHub
+- Install Nodejs
+- Install Sqlite
 - Install Posgresql
-
+- Install Anaconda
 
 
 ## Prerequisites
@@ -15,9 +18,6 @@ Welcome to this setup where we are going to install the tools required to make y
 Before we start, it is important you meet the following prerequisites to ensure the smooth running of the setup.
 Take your time to read through everything and do not hesitate to ask for help if you feel stuck.
 Ready? Let's go :sunglasses:
-
-If you already applied all the instructions that we sent you by email, please go directly to the [Virtualization](#Virtualization).
-
 
 ### Latest version of Windows
 
@@ -359,6 +359,23 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
+Check that everything went well by launching the Jupyter program
+
+```bash
+node
+```
+
+You should see this :
+
+```bash
+Welcome to Node.js v14.3.0.
+Type ".help" for more information.
+>
+```
+
+Type `.exit` to exit.
+
+
 ## Dotfiles (Standard configuration)
 
 Hackers love to refine and polish their shell and tools. We'll start with a great default configuration (http://github.com/Joz84/dotfiles), stored on GitHub. As your configuration is personal, you need your own repository storing it, so you first need to fork it to your GitHub account.
@@ -429,7 +446,28 @@ Save the `.zshrc` file with `Ctrl` + `S` and close Visual Code Studio.
 
 ## Sqlite
 
-https://www.sqlitetutorial.net/download-install-sqlite/
+Open a terminal and run the following:
+
+```bash
+sudo apt-get install sqlite libsqlite3-dev
+```
+
+Check that everything went well by launching the Jupyter program
+
+```bash
+sqlite3 db.sqlite
+```
+
+You should see this :
+
+```bash
+SQLite version 3.31.1 2020-01-27 19:55:54
+Enter ".help" for usage hints.
+sqlite>
+```
+
+Type `.exit` to exit.
+
 
 ## Postgresql
 
@@ -459,4 +497,86 @@ sudo chmod 440 /etc/sudoers.d/postgresql
 echo "sudo /etc/init.d/postgresql start" >> ~/.zshrc
 ```
 
+Once you've done that, let's check if it worked:
+
+```bash
+psql -d postgres
+```
+
+If you enter a new prompt like this one, you're good!
+
+```bash
+psql (9.5.3)
+Type "help" for help.
+
+postgres=#
+```
+
+To quit it, type `\q` then `Enter`.
+
+
+## Anaconda (Python + librairies + notebook)
+
+
+### Prerequisites
+
+To use GUI packages with Linux, you will need to install the following extended dependencies for Qt:
+
+```bash
+apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+```
+
+### Installation
+
+the installation of anaconda also includes the installations of :
+- Python
+- Pandas
+- Matplotlib
+- Numpy
+- SciPy
+- notebook Jupyter
+
+Open a terminal and run the following:
+
+```bash
+mkdir -p ~/code/tools && cd $_
+```
+
+Download the latest version with this command line:
+
+```bash
+wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+```
+
+The file is quite large, and may take a few seconds to be applied.
+
+```bash
+bash Anaconda3-2020.02-Linux-x86_64.sh
+```
+Include the bash command regardless of whether or not you are using Bash shell.
+
+This starts the installation process of Anaconda. You will need to accept the license agreement. Choose to install Anaconda in the default directory, and wait. At the end of the installation, answer `no` to the following question:
+
+```bash
+Do you wish the installer to prepend the Anaconda3 install location
+to PATH in your /home/ec2-user/.bashrc ? [yes|no]
+```
+
+```bash
+cd anaconda3/bin/
+echo export PATH='"'`pwd`':$PATH"' >> ~/.zshrc
+cd
+```
+
+Previous commands added to the file. zshrc the path (folder) where Anaconda is located. So you can launch Anaconda directly by typing only `anaconda` in your console! This will take effect when your computer is restarted, or upon execution of this command:
+
+```bash
+source ~/.zshrc
+```
+
+Check that everything went well by launching the Jupyter program
+
+```bash
+jupyter notebook
+```
 
